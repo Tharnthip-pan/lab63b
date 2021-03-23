@@ -1,0 +1,38 @@
+# การทดลองที่ 5 เรื่อง การเขียนโปรแกรมเชื่อมต่อไวไฟและเว็บเซอร์เวอร์
+## วัตถุประสงค์
+    1.เพื่อเรียนรู้การเขียนโปรแกรมเพื่อเชื่อมต่อไวไฟและเว็บเซอร์เวอร์
+## อุปกรณ์ที่ใช้
+    1.ไมโครคอนโทรเลอร์ ESP01
+    2.อุปกรณ์ต่อ USB to Serial
+    3.คอมพิวเตอร์
+## การศึกษาข้อมูลเบื้องต้น
+    1.[05 run wifi](https://youtu.be/VX-QNQcO-b4)
+    2.[src codeของโปรแกรมที่ 5 Wifi-Web-Server](https://github.com/choompol-boonmee/lab63b/blob/master/examples/05_Wifi-Web-Server/src/main.cpp)
+    3.[platformio](https://github.com/choompol-boonmee/lab63b/blob/master/examples/05_Wifi-Web-Server/platformio.ini)
+## วิธีการทำการทดลอง
+    1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial 
+    2.เปิด command prompt
+    3.เปิดโปรแกรมตัวอย่างที่ 5
+      >cd 05_Wifi-Web-Server
+      >1s
+      >vi src/main.cpp
+
+      ตัวอย่างโปรแกรมที่ 5
+      (1)ระบุชื่อไวไฟและรหัสผ่านที่ต้องการเชื่อมต่อ
+      (2)ส่วน Setup ให้เชื่อมต่อกับไวไฟที่เราระบุไว้และ setup webserver ให้ทำการเเสดงผล hello count โดย count จะเพิ่มขึ้นทีละ 1 ไปเรื่อยๆ
+         
+  
+    4.Upload โปรแกรมที่ 5 ลงบนไมโครคอนโทรเลอร์
+      >pio run -t upload
+      โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
+      
+      ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
+    5.ดูผลลัพธ์ของการรัน จะได้ ip address
+      >pio device monitor
+    6.ทำการ copy ip address ไปเปิดบน Browser 
+   
+   
+## การบันทึกผลการทดลอง
+## อภิปรายผลการทดลอง
+## คำถามหลังการทดลอง
+
