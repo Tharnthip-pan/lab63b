@@ -13,9 +13,10 @@
     3.[platformio](https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/platformio.ini)
 ## วิธีการทำการทดลอง
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial
-    2.เปิดโฟลเดอร์ซึ่งมีโปรแกรมตัวอย่าง 9 โปรแกรม
+    2.เปิด command prompt
+    3.เปิดโฟลเดอร์ซึ่งมีโปรแกรมตัวอย่าง 9 โปรแกรม
       >cd pattani
-    3.เปิดโปรแกรมตัวอย่างที่ 1 
+    4.เปิดโปรแกรมตัวอย่างที่ 1 
       >cd 01_serial_monitor
       >vi src/main.cpp
 
