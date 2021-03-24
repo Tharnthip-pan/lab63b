@@ -2,6 +2,7 @@
 ## วัตถุประสงค์
     1.เพื่อเรียนรู้การเขียนโปรแกรมเพื่อเอ้าพุทสัญญาณดิจิทัล
     2.เพื่อนำความรู้ไปประยุกต์กับการใช้งานเกี่ยวกับอุปกรณ์ที่ใช้ไฟฟ้า
+    
 ## อุปกรณ์ที่ใช้
     1.ไมโครคอนโทรเลอร์ ESP01
     2.อุปกรณ์ต่อ USB to Serial
@@ -10,51 +11,59 @@
     5.อแดปเตอร์ที่ต่อสายแยกพอร์ท
     6.รีเลย์
     7.ตัวจ่ายไฟ(พอร์ทชาร์จ)
+    
 ## การศึกษาข้อมูลเบื้องต้น
-    1.[03 run example 3](https://youtu.be/CCnN1WJsXQY)
-    2.[03 run relay](https://youtu.be/6JnhaUILGuw)
-    3.[src codeของโปรแกรมที่ 3 output-port](https://github.com/choompol-boonmee/lab63b/tree/master/examples/03_Output-Port/src)
-    4.[platformio](https://github.com/choompol-boonmee/lab63b/blob/master/examples/03_Output-Port/platformio.ini)
+1.[03 run example 3](https://youtu.be/CCnN1WJsXQY)                                                                                                                             
+2.[03 run relay](https://youtu.be/6JnhaUILGuw)                                                                                                                                 
+3.[src codeของโปรแกรมที่ 3 output-port](https://github.com/choompol-boonmee/lab63b/tree/master/examples/03_Output-Port/src)                                                     
+4.[platformio](https://github.com/choompol-boonmee/lab63b/blob/master/examples/03_Output-Port/platformio.ini)
+
 ## วิธีการทำการทดลอง
     1.ต่ออแดปเตอร์เข้ากับ serial และต่อไมโครคอนโทรเลอร์เข้ากับอเเดปเตอร์
+    
+![image](https://user-images.githubusercontent.com/80879475/112243151-ab715a80-8c7f-11eb-849c-680c14e98a68.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112243155-ad3b1e00-8c7f-11eb-979e-c2a1233b6359.jpg)
+
     2.เปิด command prompt
     3.เปิดโปรแกรมตัวอย่างที่ 3
       >cd ../03_output-port
       >1s
       >pwd
       >vi src/main.cpp
+![image](https://user-images.githubusercontent.com/80879475/112243222-cb088300-8c7f-11eb-88d6-4e2c35dc7359.jpg)
 
       ตัวอย่างโปรแกรมที่ 3 
       (1)ส่วน set up คือการ set port 0 เป็น output
       (2)ส่วน loop เป็นคำสั่งรันวนลูป ทุกๆเวลาครึ่งวินาที 
          การนับ count จะนับ count ไปเรื่อยๆ
          count คี่ = on = ส่งค่า 1 (high) ไปที่ port 0
-         count คู่ = off = ส่งค่า 0 (low) ไปที่ port 0
-      
+         count คู่ = off = ส่งค่า 0 (low) ไปที่ port 0     
   
     4.Upload โปรแกรมที่ 3 ลงบนไมโครคอนโทรเลอร์
       >pio run -t upload
       โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
-      
       ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
     5.ดูผลลัพธ์ของการรัน
       >pio device monitor
-      
+![image](https://user-images.githubusercontent.com/80879475/112243439-1cb10d80-8c80-11eb-963b-80f820bea65f.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112243442-1d49a400-8c80-11eb-841e-8ce2b3462ff8.jpg)
+
     6.การรันรีเลย์
       6.1 ต่อไมโครคอนโทรเลอร์เข้ากับรีเลย์และต่อตัว่ายไฟเข้ากับรีเลย์ 
           (ใช้รีเลย์มาช่วยในการเปิด-ปิดสวิตซ์สามารถนำไปประยุกต์ใช้กับอุปกรณ์ที่ใช้ไฟฟ้าได้ ซึ่งรีเลย์จะทำงานทุกๆครึ่งวินาที)
+![image](https://user-images.githubusercontent.com/80879475/112243435-1ae74a00-8c80-11eb-8dc5-5d9a37bbb02e.jpg)
        
 ## การบันทึกผลการทดลอง
     หลังจากที่รันคำสั่ง
     >pio device monitor
     จะแสดงผล on-off สลับกับไปทุกๆครึ่งวินาทีและ port 0 จะไฟติดเมื่อ on
-    
     และหลังจากที่ต่อรีเลย์เพื่อควบคุมการเปิด-ปิดสวิตซ์จะแสดงผล on-off สลับกับไปทุกๆครึ่งวินาทีและไฟติดเมื่อ on
     
 ## อภิปรายผลการทดลอง
     จากการทดลองจะเห็นได้ว่าหลังจากที่รันคำสั่งให้ไมโครคอนโทรเลอร์ทำงานจะพบการ on-0ff สลับกันไปทุกๆครึ่งวินาทีตาม code 
     ที่เราได้ลงไปบนไมโครคอนโทรเลอร์ และ port 0 จะไฟติดเมื่อ on หลังจากที่ต่อรีเลย์ผลที่ได้ออกมาก็จะเหมือนกับที่ไมโครคอนโทรเลอร์
     ได้รับมาจาก code ที่ลงไปก็คือ on-0ff สลับกันไปทุกๆครึ่งวินาทีและไฟติดเมื่อ on
+    
 ## คำถามหลังการทดลอง
     ทำไมถึงได้มีการต่อหลอด LED ไว้ที่ port 0 ?
     คำตอบ เพราะ port 0 เป็น port output ซึ่งจะแสดงผลออกมาโดยที่ต่อหลอด LED ไว้เพราะว่าจะได้สังเกตได้ง่ายว่าเป็น on-off
