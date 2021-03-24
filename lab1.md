@@ -8,9 +8,9 @@
     2.อุปกรณ์ต่อ USB to Serial
     3.คอมพิวเตอร์
 ## การศึกษาข้อมูลเบื้องต้น
-    1.01 run example 1 https://youtu.be/NLIUsWLEpmg
-    2.src codeของโปรแกรมที่ 1 serial-monitor https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/src/main.cpp
-    3.platformio https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/platformio.ini
+   1.01 run example 1 https://youtu.be/NLIUsWLEpmg
+   2.src codeของโปรแกรมที่ 1 serial-monitor https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/src/main.cpp
+   3.platformio https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/platformio.ini
 ## วิธีการทำการทดลอง
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial
     2.เปิด command prompt
