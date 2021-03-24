@@ -19,6 +19,7 @@
     4.เปิดโปรแกรมตัวอย่างที่ 1 
       >cd 01_serial_monitor
       >vi src/main.cpp
+      ![S__30400619](https://user-images.githubusercontent.com/80879475/112239057-6c8bd680-8c78-11eb-8c37-af30e2625c29.jpg)
 
       ตัวอย่างโปรแกรมที่ 1 มี 2 ส่วน
       (1)ส่วน setup เป็นคำสั่งรัน 1 ครั้งและ set serial port ที่ความเร็ว 115200
