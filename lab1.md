@@ -3,14 +3,17 @@
     1.เพื่อเรียนรู้การเขียนโปรแกรมเพื่อใช้รันบนไมโครคอนโทรเลอร์
     2.เพื่อทราบรายละเอียดของ platformio
     3.เพื่อทราบรายละเอียดของตัวอย่างโปรแกรม
+    
 ## อุปกรณ์ที่ใช้
     1.ไมโครคอนโทรเลอร์ ESP01
     2.อุปกรณ์ต่อ USB to Serial
     3.คอมพิวเตอร์
+    
 ## การศึกษาข้อมูลเบื้องต้น
 1.01 run example 1 https://youtu.be/NLIUsWLEpmg                                                                                                                               
 2.src codeของโปรแกรมที่ 1 serial-monitor https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/src/main.cpp                                         
 3.platformio https://github.com/choompol-boonmee/lab63b/blob/master/examples/01_Serial-Monitor/platformio.ini
+
 ## วิธีการทำการทดลอง
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial
     2.เปิด command prompt
@@ -33,6 +36,7 @@
       ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
     6.ดูผลลัพธ์ของการรัน
       >pio device monitor
+      
 ## การบันทึกผลการทดลอง
     หลังจากที่รันคำสั่งเพื่อดูรายละเอียดของ platformio
        >vi platformio.ini
@@ -49,6 +53,7 @@
 ## อภิปรายผลการทดลอง
     จากการทดลองรันคำสั่งเพื่อดูรายละเอียดของ platformio จะสามารถเก็นรายละเอียดของ platformio ได้และจากการรันคำสั่งเพื่อดูผลลัพธ์ของการรัน
     ของไมโครคอนโทรเลอร์ก็พบว่าไมโครคอนโทรเลอร์ที่ลงโปรแกรมที่ 1 serial-monitor สามารถใช้งานได้จริงและดูได้จากการบันทึกผลการทดลอง
+    
 ## คำถามหลังการทดลอง
     ถ้าเราต้องการดูรายละเอียดของ platformio ต้องรันคำสั่งใด?
     คำตอบ เปิด command prompt และรันคำสั่ง vi platformio.ini
