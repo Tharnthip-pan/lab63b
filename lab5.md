@@ -18,7 +18,6 @@
       >vi src/main.cpp
 
 ![image](https://user-images.githubusercontent.com/80879475/112244897-84685800-8c82-11eb-9324-25c82914e42c.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112245011-b679ba00-8c82-11eb-8e74-de068a04ca40.jpg)
 
       ตัวอย่างโปรแกรมที่ 5
       (1)ระบุชื่อไวไฟและรหัสผ่านที่ต้องการเชื่อมต่อ
