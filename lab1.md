@@ -15,7 +15,7 @@
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial
     2.เปิด command prompt
     3.เปิดโฟลเดอร์ซึ่งมีโปรแกรมตัวอย่าง 9 โปรแกรม
-      >cd pattani
+      >cd pattani 
     4.เปิดโปรแกรมตัวอย่างที่ 1 
       >cd 01_serial_monitor
       >vi src/main.cpp
