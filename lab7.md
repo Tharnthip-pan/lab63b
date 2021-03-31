@@ -184,11 +184,7 @@ void loop(void){
 
 © 2021 GitHub, Inc.
 ```
-  server.handleClient();
-}
 
-© 2021 GitHub, Inc.
-```
 
  4.Upload โปรแกรมที่ 7 ลงบนไมโครคอนโทรเลอร์
       >pio run -t upload
