@@ -13,10 +13,10 @@
     7.ตัวจ่ายไฟ(พอร์ทชาร์จ)
     
 ## การศึกษาข้อมูลเบื้องต้น
-1.[03 run example 3](https://youtu.be/CCnN1WJsXQY)                                                                                                                             
-2.[03 run relay](https://youtu.be/6JnhaUILGuw)                                                                                                                                 
-3.[src codeของโปรแกรมที่ 3 output-port](https://github.com/choompol-boonmee/lab63b/tree/master/examples/03_Output-Port/src)                                                     
-4.[platformio](https://github.com/choompol-boonmee/lab63b/blob/master/examples/03_Output-Port/platformio.ini)
+1.03 run example 3  https://youtu.be/CCnN1WJsXQY                                                                                                                          
+2.03 run relay  https://youtu.be/6JnhaUILGuw                                                                                                                                
+3.src codeของโปรแกรมที่ 3 output-port  https://github.com/choompol-boonmee/lab63b/tree/master/examples/03_Output-Port/src                                                     
+4.platformio  https://github.com/choompol-boonmee/lab63b/blob/master/examples/03_Output-Port/platformio.ini
 
 ## วิธีการทำการทดลอง
     1.ต่ออแดปเตอร์เข้ากับ serial และต่อไมโครคอนโทรเลอร์เข้ากับอเเดปเตอร์
