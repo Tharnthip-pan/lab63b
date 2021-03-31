@@ -23,7 +23,7 @@ void setup(void){
 
 	WiFi.softAP(ssid, password);
 	WiFi.softAPConfig(local_ip, gateway, subnet);
-	delay(1000);                                               - ดีเลย์หรือความหน่วงเวลา 1000 ms หรือ 1 วินาที -
+	delay(1000);                                               - เพิ่มดีเลย์หรือความหน่วงเวลา 1000 ms หรือ 1 วินาที -
 
 	server.onNotFound([]() {
 		server.send(404, "text/plain", "Path Not Found");
@@ -47,20 +47,22 @@ void loop(void){
 © 2021 GitHub, Inc.
 ```
 
-## ค้นหาไวไฟ+เชื่อมไวไฟ
+## ค้นหาไวไฟ+เชื่อมไวไฟ+ไฟกระพริบ
 
 ```javascript
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 
+unsigned char status_led = 0;                 - กำหนดตัวแปรเพื่อเก็บค่าสถานะของหลอด LED -
 int cnt = 0;
 
 void setup()
 {
-	Serial.begin(115200);
+	Serial.begin(250000);                 - เพิ่มความเร็ว -
+	pinMode(0,output);                     
 	WiFi.mode(WIFI_STA);
 	WiFi.disconnect();
-	delay(100);
+	delay(1000);                          - เพิ่มดีเลย์หรือความหน่วงเวลา 1000 ms หรือ 1 วินาที -
 	Serial.println("\n\n\n");
 }
 
