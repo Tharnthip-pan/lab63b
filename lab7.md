@@ -22,47 +22,32 @@
 
 ## วิธีการทำการทดลอง
 
-    1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial
-    
-![image](https://user-images.githubusercontent.com/80879475/112241058-1ae54b00-8c7c-11eb-839a-ae2bf9ed776b.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112241060-1b7de180-8c7c-11eb-9d2b-bc1dc93bafe9.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112241052-191b8780-8c7c-11eb-9011-468a60235599.jpg)      
-                                                         
-    2.เปิด command prompt                                                                                                                                                       
-    3.เปิดโฟลเดอร์ซึ่งมีโปรแกรมตัวอย่าง 9 โปรแกรม
-      >cd pattani 
-
-![image](https://user-images.githubusercontent.com/80879475/112241282-87604a00-8c7c-11eb-8722-b50cd9adf8c6.jpg)
-
-    4.เปิดโปรแกรมตัวอย่างที่ 1 
-      >cd 01_serial_monitor
+    1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial 
+    2.เปิด command prompt
+    3.เปิดโปรแกรมตัวอย่างที่ 6
+      >cd 06_Wifi-AP-Web-Server
+      >pwd
       >vi src/main.cpp
 
-![image](https://user-images.githubusercontent.com/80879475/112241376-b5458e80-8c7c-11eb-81e6-c69790d7f03d.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112245483-8b439a80-8c83-11eb-895c-b71bd85e4214.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112245712-fc834d80-8c83-11eb-9884-81cd845de58d.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112245717-fee5a780-8c83-11eb-8e2a-1ab5e42f52c1.jpg)
 
-      ตัวอย่างโปรแกรมที่ 1 มี 2 ส่วน                                                                                                                                                 
-      (1)ส่วน setup เป็นคำสั่งรัน 1 ครั้งและ set serial port ที่ความเร็ว 115200                                                                                                           
-      (2)ส่วน loop เป็นคำสั่งรันวนลูป เพิ่มตัวแปร count ไปเรื่อยๆและแสดงผลตัวแปร count ออกมาและหน่วงเวลา 1 วินาที                                                                             
-    4.รันคำสั่งเพื่อดูรายละเอียดของ platformio
-      >vi platformio.ini            
-                                                                                                                                           
-![image](https://user-images.githubusercontent.com/80879475/112241548-09507300-8c7d-11eb-94b5-82e39549f44d.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112241541-06ee1900-8c7d-11eb-92b9-9d5c3c3faf8e.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112241546-08b7dc80-8c7d-11eb-8c28-293b5056d4b4.jpg)
-
-    5.Upload โปรแกรมที่ 1 ลงบนไมโครคอนโทรเลอร์
+      ตัวอย่างโปรแกรมที่ 6
+      (1)ตั้งชื่อไวไฟและรหัสผ่านที่ต้องการ
+      (2)ส่วน Setup IPAddress local_ip , IPAddress gateway , IPAddress subnet 
+         
+    4.Upload โปรแกรมที่ 6 ลงบนไมโครคอนโทรเลอร์
       >pio run -t upload
       โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
       ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
-
-![image](https://user-images.githubusercontent.com/80879475/112241869-57657680-8c7d-11eb-8e26-f0b41453f496.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112241866-559bb300-8c7d-11eb-96a5-662ec7aebf3e.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112241868-56cce000-8c7d-11eb-98e9-1f9c5b7334fd.jpg)
-
-    6.ดูผลลัพธ์ของการรัน
+      
+    5.รันคำสั่ง
       >pio device monitor
+      จนแสดงผลว่า ver started
 
-![image](https://user-images.githubusercontent.com/80879475/112241963-87ad1500-8c7d-11eb-9d43-486090a9b789.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112245820-39e7db00-8c84-11eb-84f3-c9a21711df0f.jpg)
+
 
 ## การบันทึกผลการทดลอง
     หลังจากที่รันคำสั่งเพื่อดูรายละเอียดของ platformio
