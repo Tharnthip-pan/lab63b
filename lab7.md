@@ -98,7 +98,106 @@ void loop(void){
    
 ### การเขียนโปรแกรมค้นหาไวไฟและเชื่อมต่อไวไฟพร้อมสัญญาณไฟ
 
+ 1.ต่ออแดปเตอร์เข้ากับ serial และต่อไมโครคอนโทรเลอร์เข้ากับอเเดปเตอร์
+    
+![image](https://user-images.githubusercontent.com/80879475/112243151-ab715a80-8c7f-11eb-849c-680c14e98a68.jpg)
+![image](https://user-images.githubusercontent.com/80879475/112243155-ad3b1e00-8c7f-11eb-979e-c2a1233b6359.jpg)
 
+    2.เปิด command prompt
+    3.เปิดโปรแกรมตัวอย่างที่ 7
+      >cd 07
+      >vi src/main.cpp
+     
+```javascript
+#include <ESP8266WiFi.h>
+//#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+
+const char* ssid = "why do u have to use my wifi?";
+const char* password = "whyyyyy!";
+unsigned char status_led=0;                                      - กำหนดตัวแปรเพื่อรับและเก็บค่าสถานะของหลอด led -
+
+ESP8266WebServer server(80);
+
+int cnt = 0;
+
+void setup(void){
+	Serial.begin(250000);
+	pinMode(0,output);
+
+	WiFi.mode(WIFI_STA);
+	WiFi.begin(ssid, password);
+	while (WiFi.status() != WL_CONNECTED) {
+		delay(1000);
+		Serial.print(".");
+	     
+	}
+	Serial.print("\n\nIP address: ");
+	Serial.println(WiFi.localIP());
+
+	server.onNotFound([]() {
+		server.send(404, "text/plain", "Path Not Found");
+	});
+
+	server.on("/", []() {
+		cnt++;
+		String msg = "Hello cnt: ";
+		msg += cnt;
+		server.send(200, "text/plain", msg);
+	});
+
+	server.begin();
+	Serial.println("HTTP server started");
+}
+
+void loop(void){
+//lab6
+  server.handleClient();
+  //lab2
+  Serial.println("========== Start Scan Wifi ===========");
+	int n = WiFi.scanNetworks();
+	if(n == 0) {
+		Serial.println("========== OFF ===========");		//lab3
+		status_led=0;                   			//กำหนดค่า ตัวแปรใน status_led=0
+		digitalWrite(0, LOW);					//lab3
+		Serial.println("NO NETWORK FOUND");
+	} else {
+		Serial.println("========== ON ===========");	//lab3
+		status_led=1;                   		//กำหนดค่า ตัวแปรใน status_led=1
+		digitalWrite(0, HIGH);				//lab3
+		for(int i=0; i<n; i++) {
+			Serial.print(i + 1);
+			Serial.print(": ");
+			Serial.print(WiFi.SSID(i));
+			Serial.print(" (");
+			Serial.print(WiFi.RSSI(i));
+			Serial.println(")");
+			int w = i*500
+			delay(w);		//กำหนดให้ความหน่วงเพิ่มขึ้นตามจำนวนไวไฟที่พบ
+		}
+	}
+	Serial.println("NOW! FOUND %w NETWORK",n);		//บอกจำนวนไวไฟที่เจอรอบสถานที่นั้น
+  
+  delay(1000)
+  Serial.println("\n\n\n");
+}
+
+© 2021 GitHub, Inc.
+```
+  server.handleClient();
+}
+
+© 2021 GitHub, Inc.
+```
+
+ 4.Upload โปรแกรมที่ 7 ลงบนไมโครคอนโทรเลอร์
+      >pio run -t upload
+      โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
+      ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
+      
+    5.รันคำสั่ง
+      >pio device monitor
+      
 ## การบันทึกผลการทดลอง
     หลังจากที่รันคำสั่งเพื่อดูรายละเอียดของ platformio
        >vi platformio.ini
