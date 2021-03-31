@@ -26,8 +26,8 @@
 
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial 
     2.เปิด command prompt
-    3.เปิดโปรแกรมตัวอย่างที่ 6
-      >cd 06_Wifi-AP-Web-Server
+    3.เปิดโปรแกรมตัวอย่างที่ 7.1
+      >cd 07_1
       >pwd
       >vi src/main.cpp
 
@@ -77,11 +77,11 @@ void loop(void){
 © 2021 GitHub, Inc.
 ```
 
-      ตัวอย่างโปรแกรมที่ 6
+      ตัวอย่างโปรแกรมที่ 7.1
       (1)ตั้งชื่อไวไฟและรหัสผ่านที่ต้องการ
       (2)ส่วน Setup IPAddress local_ip , IPAddress gateway , IPAddress subnet 
          
-    4.Upload โปรแกรมที่ 6 ลงบนไมโครคอนโทรเลอร์
+    4.Upload โปรแกรมที่ 7.1 ลงบนไมโครคอนโทรเลอร์
       >pio run -t upload
       โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
       ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
@@ -104,8 +104,8 @@ void loop(void){
 ![image](https://user-images.githubusercontent.com/80879475/112243155-ad3b1e00-8c7f-11eb-979e-c2a1233b6359.jpg)
 
     2.เปิด command prompt
-    3.เปิดโปรแกรมตัวอย่างที่ 7
-      >cd 07
+    3.เปิดโปรแกรมตัวอย่างที่ 7.2
+      >cd 07_2
       >vi src/main.cpp
      
 ```javascript
@@ -184,7 +184,7 @@ void loop(void){
 ```
 
 
-    4.Upload โปรแกรมที่ 7 ลงบนไมโครคอนโทรเลอร์
+    4.Upload โปรแกรมที่ 7.2 ลงบนไมโครคอนโทรเลอร์
       >pio run -t upload
       โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
       ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
