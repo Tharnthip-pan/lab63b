@@ -17,6 +17,26 @@
 ## วิธีการทำการทดลอง
 
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial
+
+```javascript
+#include <Arduino.h>
+
+int cnt = 0;
+
+void setup()
+{
+	Serial.begin(115200);
+}
+
+void loop()
+{
+	cnt++;
+	Serial.printf("PATTANI :%d\n",cnt);
+	delay(1000);
+}
+
+© 2021 GitHub, Inc.
+```
     
 ![image](https://user-images.githubusercontent.com/80879475/112241058-1ae54b00-8c7c-11eb-839a-ae2bf9ed776b.jpg)
 ![image](https://user-images.githubusercontent.com/80879475/112241060-1b7de180-8c7c-11eb-9d2b-bc1dc93bafe9.jpg)
