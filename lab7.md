@@ -122,13 +122,13 @@ ESP8266WebServer server(80);
 int cnt = 0;
 
 void setup(void){
-	Serial.begin(250000);
+	Serial.begin(250000);                                    - เพิ่มความเร็ว -
 	pinMode(0,output);
 
 	WiFi.mode(WIFI_STA);
 	WiFi.begin(ssid, password);
 	while (WiFi.status() != WL_CONNECTED) {
-		delay(1000);
+		delay(1000);                                      - เพิ่มความหน่วงหรือดีเลย์เป็น 1000 ms หรือ 1 วินาที -
 		Serial.print(".");
 	     
 	}
@@ -151,20 +151,18 @@ void setup(void){
 }
 
 void loop(void){
-//lab6
-  server.handleClient();
-  //lab2
-  Serial.println("========== Start Scan Wifi ===========");
+
+  Serial.println("========== เริ่มค้นหาไวไฟ ===========");
 	int n = WiFi.scanNetworks();
 	if(n == 0) {
-		Serial.println("========== OFF ===========");		//lab3
-		status_led=0;                   			//กำหนดค่า ตัวแปรใน status_led=0
-		digitalWrite(0, LOW);					//lab3
+		Serial.println("========== ปิดจ้าาาปิด ===========");		
+		status_led=0;                   			- กำหนดค่าตัวแปร status_led=0 -
+		digitalWrite(0, LOW);					
 		Serial.println("NO NETWORK FOUND");
 	} else {
-		Serial.println("========== ON ===========");	//lab3
-		status_led=1;                   		//กำหนดค่า ตัวแปรใน status_led=1
-		digitalWrite(0, HIGH);				//lab3
+		Serial.println("========== เปิดดดดดด ===========");	
+		status_led=1;                   		        - กำหนดค่าตัวแปร status_led=1 -
+		digitalWrite(0, HIGH);				
 		for(int i=0; i<n; i++) {
 			Serial.print(i + 1);
 			Serial.print(": ");
@@ -173,12 +171,12 @@ void loop(void){
 			Serial.print(WiFi.RSSI(i));
 			Serial.println(")");
 			int w = i*500
-			delay(w);		//กำหนดให้ความหน่วงเพิ่มขึ้นตามจำนวนไวไฟที่พบ
+			delay(w);		- กำหนดให้ความหน่วงหรือดีเลย์เพิ่มขึ้นตามจำนวนไวไฟที่พบ -
 		}
 	}
-	Serial.println("NOW! FOUND %w NETWORK",n);		//บอกจำนวนไวไฟที่เจอรอบสถานที่นั้น
+	Serial.println("NOW! FOUND %w NETWORK",n);		- แสดงจำนวนไวไฟที่ค้นหาเจอ -
   
-  delay(1000)
+  delay(1000)                                                   - เพิ่มความหน่วงหรือดีเลย์เป็น 1000 ms หรือ 1 วินาที -
   Serial.println("\n\n\n");
 }
 
@@ -186,7 +184,7 @@ void loop(void){
 ```
 
 
- 4.Upload โปรแกรมที่ 7 ลงบนไมโครคอนโทรเลอร์
+    4.Upload โปรแกรมที่ 7 ลงบนไมโครคอนโทรเลอร์
       >pio run -t upload
       โปรแกรมจะทำการ upload ลงบนไมโครคอนโทรเลอร์ 
       ระหว่างการ upload ต้องกดคำสั่ง upload+reset (ปุ่มสีดำ+สีแดง)เพื่อให้โปรแกรมรับคำสั่งใหม่เข้าไป
