@@ -37,7 +37,7 @@
 
 ![image](https://user-images.githubusercontent.com/80879475/112245820-39e7db00-8c84-11eb-84f3-c9a21711df0f.jpg)
 
-    7.นำโทรศัพท์มือถือมาเช็คไวไฟ
+    6.นำโทรศัพท์มือถือมาเช็คไวไฟ
    
 ![image](https://user-images.githubusercontent.com/80879475/112245984-8c28fc00-8c84-11eb-8072-9a1a88f69898.jpg)
    
