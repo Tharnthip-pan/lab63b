@@ -9,6 +9,7 @@
     3.คอมพิวเตอร์
     4.หลอด led
     5.อแดปเตอร์ที่ต่อสายแยกพอร์ท
+    6.รีเลย์
     
 ## การศึกษาข้อมูลเบื้องต้น
 1.02 run example 2  https://youtu.be/yBjab0UNuB8                                                                                                                               
@@ -21,6 +22,8 @@
 8.src codeของโปรแกรมที่ 6 Wifi-AP-Web-Server  https://github.com/choompol-boonmee/lab63b/blob/master/examples/06_Wifi-AP-Web-Server/src/main.cpp      
 
 ## วิธีการทำการทดลอง
+
+### การประยุกต์การเขียนโปรแกรมสร้างไวไฟแอคเซสพอยต์ (Wifi AP)
 
     1.ต่อไมโครคอนโทรเลอร์เข้ากับ serial 
     2.เปิด command prompt
@@ -89,6 +92,12 @@ void loop(void){
       จนแสดงผลว่า ver started
 
 ![image](https://user-images.githubusercontent.com/80879475/112245820-39e7db00-8c84-11eb-84f3-c9a21711df0f.jpg)
+
+    6.นำโทรศัพท์มือถือมาเช็คไวไฟ
+   
+![image](https://user-images.githubusercontent.com/80879475/112245984-8c28fc00-8c84-11eb-8072-9a1a88f69898.jpg)
+   
+### การเขียนโปรแกรมค้นหาไวไฟและเชื่อมต่อไวไฟพร้อมสัญญาณไฟ
 
 
 ## การบันทึกผลการทดลอง
