@@ -29,9 +29,51 @@
       >pwd
       >vi src/main.cpp
 
-![image](https://user-images.githubusercontent.com/80879475/112245483-8b439a80-8c83-11eb-895c-b71bd85e4214.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112245712-fc834d80-8c83-11eb-9884-81cd845de58d.jpg)
-![image](https://user-images.githubusercontent.com/80879475/112245717-fee5a780-8c83-11eb-8e2a-1ab5e42f52c1.jpg)
+
+```javascript
+#include <ESP8266WiFi.h>
+//#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+
+const char* ssid = "why do u have to use my wifi?";          - กำหนด ssid หรือชื่อไวไฟ -
+const char* password = "whyyyyy!";                           - กำหนดรหัสผ่าน -
+
+IPAddress local_ip(192, 168, 1, 1);                          - กำหนด IPAddress local_ip -
+IPAddress gateway(192, 168, 1, 1);                           - กำหนด IPAddress gateway -
+IPAddress subnet(255, 255, 255, 0);                          - กำหนด IPAddress subnet -
+
+ESP8266WebServer server(80);
+
+int cnt = 0;
+
+void setup(void){ 
+	Serial.begin(250000);                                      - เพิ่มความเร็ว -
+
+	WiFi.softAP(ssid, password);
+	WiFi.softAPConfig(local_ip, gateway, subnet);
+	delay(1000);                                               - เพิ่มดีเลย์หรือความหน่วงเวลา 1000 ms หรือ 1 วินาที -
+
+	server.onNotFound([]() {
+		server.send(404, "text/plain", "Path Not Found");
+	});
+
+	server.on("/", []() {
+		cnt++;
+		String msg = "Hello cnt: ";
+		msg += cnt;
+		server.send(200, "text/plain", msg);
+	});
+
+	server.begin();
+	Serial.println("HTTP server started");
+}
+
+void loop(void){
+  server.handleClient();
+}
+
+© 2021 GitHub, Inc.
+```
 
       ตัวอย่างโปรแกรมที่ 6
       (1)ตั้งชื่อไวไฟและรหัสผ่านที่ต้องการ
